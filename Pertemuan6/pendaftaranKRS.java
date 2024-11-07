@@ -23,7 +23,7 @@ public class pendaftaranKRS extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        // Menu Bar
+        // Menu Bar = berisi menu reset dan 
         JMenuBar menuBar = new JMenuBar();
         JMenu menu = new JMenu("Menu");
         JMenuItem resetMenuItem = new JMenuItem("Reset Form");
