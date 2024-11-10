@@ -1,8 +1,11 @@
-package Pertemuan7.Membership.src.view.main;
+package view.main;
 
-import java.awt.event.*;
 
-public class MainButtonActionListener implements ActionListener{
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class MainButtonActionListener implements ActionListener {
+
     private MainFrame mainFrame;
 
     public MainButtonActionListener(MainFrame mainFrame){
@@ -17,4 +20,5 @@ public class MainButtonActionListener implements ActionListener{
             mainFrame.showMemberFrame();
         }
     }
+
 }

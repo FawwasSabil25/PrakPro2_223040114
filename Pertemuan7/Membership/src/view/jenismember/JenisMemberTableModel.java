@@ -1,11 +1,12 @@
-package Pertemuan7.Membership.src.view.jenismember;
+package view.jenismember;
 
-import javax.swing.table.*;
 import java.util.List;
-import Pertemuan7.Membership.src.model.JenisMember;
+import javax.swing.table.*;
+import model.JenisMember;
 
-public class JenisMemberTableModel extends AbstractTableModel{
-    private String[] columnNames = {"Nama"};
+public class JenisMemberTableModel extends AbstractTableModel {
+
+     private String[] columnNames = {"Nama"};
     private List<JenisMember> data;
 
     public JenisMemberTableModel(List<JenisMember> data){
@@ -45,4 +46,5 @@ public class JenisMemberTableModel extends AbstractTableModel{
         data.add(value);
         fireTableRowsInserted(data.size() - 1, data.size() -1);
     }
+
 }

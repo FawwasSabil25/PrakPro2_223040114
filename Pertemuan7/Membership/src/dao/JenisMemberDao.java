@@ -1,16 +1,17 @@
-package Pertemuan7.Membership.src.dao;
+package dao;
 
-import Pertemuan7.Membership.src.db.MySqlConnection;
-import Pertemuan7.Membership.src.model.JenisMember;
+import db.MySqlConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.sql.ResultSet;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
+import model.JenisMember;
 
 public class JenisMemberDao {
+
     public int insert(JenisMember jenisMember) {
         int result = -1;
         try (Connection connection = MySqlConnection.getInstance().getConnection()) {
@@ -69,4 +70,5 @@ public class JenisMemberDao {
         }
         return list;
     }
+
 }

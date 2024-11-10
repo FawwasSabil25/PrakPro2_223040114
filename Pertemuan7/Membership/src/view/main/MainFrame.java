@@ -1,17 +1,17 @@
-package Pertemuan7.Membership.src.view.main;
+package view.main;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
 import java.awt.FlowLayout;
-import java.awt.event.*;
-import javax.swing.*;
-import javax.swing.table.*;
-import java.util.*;
-import Pertemuan7.Membership.src.model.*;
-import Pertemuan7.Membership.src.view.jenismember.JenisMemberFrame;
-import Pertemuan7.Membership.src.view.member.MemberFrame;
-import Pertemuan7.Membership.src.dao.*;
+
+import dao.JenisMemberDao;
+import dao.MemberDao;
+import view.jenismember.JenisMemberFrame;
+import view.member.MemberFrame;
 
 public class MainFrame extends JFrame{
-    private JenisMemberFrame jenisMemberFrame;
+
+     private JenisMemberFrame jenisMemberFrame;
     private MemberFrame memberFrame;
     private JButton buttonJenisMember;
     private JButton buttonMember;
@@ -72,4 +72,5 @@ public class MainFrame extends JFrame{
             }
         });
     }
+
 }

@@ -1,73 +1,20 @@
-// package Pertemuan7.Membership.src.view.jenismember;
-
-// import java.awt.event.*;
-// import javax.swing.*;
-// import javax.swing.table.*;
-// import java.util.List;
-// import Pertemuan7.Membership.src.model.*;
-// import Pertemuan7.Membership.src.dao.JenisMemberDao;
-
-// public class JenisMemberFrame extends JFrame{
-//     private List<JenisMember> jenismemberList;
-//     private JTextField JTextFieldNama;
-//     private JenisMemberTableModel tableModel;
-//     private JenisMemberDao jenisMemberDao;
-
-//     public JenisMemberFrame(JenisMemberDao jenisMemberDao){
-//         this.jenisMemberDao = jenisMemberDao;
-//         this.jenisMemberList = jenisMemberDao.findAll();
-//         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
-//         JLabel labelInput = new JLabel("nama");
-//         labelInput.setBounds(15,40,350,10);
-
-//         textFieldNama = new JTextField();
-//         textFieldNama.setBounds(15, 60, 350, 30);
-
-//         JButton button = new JButton("Simpan");
-//         button.setBounds(15,100,100,40);
-
-//         javax.swing.JTable table = new JTable();
-//         JScrollPane scrollabScrollTable  = new JScrollPane(table);
-//         scrollabScrollTable.setBounds(15,150,350,200);
-
-//         tableModel = new JenisMemberTableModel(jenisMemberList);
-//         table.setModel(tableModel);
-
-//         JenisMemberButtonSimpanActionListener actionListener = new JenisMemberButtonSimpanActionListener(this, jenisMemberDao);
-
-//         button.addActionListener(actionListener);
-
-//         this.add(button);
-//         this.add(textFieldNama);
-//         this.add(labelInput);
-//         this.add(scrollabScrollTable);
-
-//         this.setSize(400,500);
-//         this.setLayout(null);
-//     }
-
-//     public String getNama(){
-//         return textFieldNama.getText();
-//     }
-
-//     public void addJenisMember(JenisMember jenisMember){
-//         tableModel.add(jenisMember);
-//         textFieldNama.setText(" ");
-//     }
-// }
-
-
-package Pertemuan7.Membership.src.view.jenismember;
+package view.jenismember;
 
 import java.awt.event.*;
-import javax.swing.*;
-import javax.swing.table.*;
-import java.util.List; // Added import for List
-import Pertemuan7.Membership.src.model.*;
-import Pertemuan7.Membership.src.dao.JenisMemberDao;
+import java.util.List;
 
-public class JenisMemberFrame extends JFrame {
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
+import dao.JenisMemberDao;
+import model.JenisMember;
+
+public class JenisMemberFrame extends JFrame{
+
     private List<JenisMember> jenisMemberList;
     private JTextField textFieldNama; // Fixed variable name to match the declaration below
     private JenisMemberTableModel tableModel;
@@ -114,4 +61,5 @@ public class JenisMemberFrame extends JFrame {
         tableModel.add(jenisMember);
         textFieldNama.setText("");
     }
+
 }

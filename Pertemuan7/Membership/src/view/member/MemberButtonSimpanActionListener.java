@@ -1,11 +1,13 @@
-package Pertemuan7.Membership.src.view.member;
+package view.member;
 
+import dao.MemberDao;
 import java.awt.event.*;
 import java.util.UUID;
-import Pertemuan7.Membership.src.model.*;
-import Pertemuan7.Membership.src.dao.MemberDao;
+import model.JenisMember;
+import model.Member;
 
 public class MemberButtonSimpanActionListener implements ActionListener{
+
     private MemberFrame memberFrame;
     private MemberDao memberDao;
 
@@ -30,4 +32,5 @@ public class MemberButtonSimpanActionListener implements ActionListener{
             this.memberDao.insert(member);
         }
     }
+
 }

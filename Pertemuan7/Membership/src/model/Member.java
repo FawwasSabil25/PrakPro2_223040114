@@ -1,6 +1,7 @@
-package Pertemuan7.Membership.src.model;
+package model;
 
 public class Member {
+
     private String id;
     private String nama;
     private JenisMember jenisMember;

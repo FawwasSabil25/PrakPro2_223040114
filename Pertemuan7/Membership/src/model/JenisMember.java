@@ -1,6 +1,7 @@
-package Pertemuan7.Membership.src.model;
+package model;
 
 public class JenisMember {
+
     private String id;
     private String nama;
 
@@ -19,4 +20,5 @@ public class JenisMember {
     public String getNama(){
         return nama;
     }
+
 }

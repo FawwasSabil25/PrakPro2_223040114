@@ -1,13 +1,23 @@
-package Pertemuan7.Membership.src.view.member;
+package view.member;
 
 import java.awt.event.*;
-import javax.swing.*;
-import javax.swing.table.*;
 import java.util.*;
-import Pertemuan7.Membership.src.model.*;
-import Pertemuan7.Membership.src.dao.*;
 
-public class MemberFrame extends JFrame{
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
+import dao.JenisMemberDao;
+import dao.MemberDao;
+import model.*;
+
+public class MemberFrame extends JFrame {
+
     private List<JenisMember> jenisMemberList;
     private List<Member> memberList;
     private JTextField textFieldNama;
@@ -83,4 +93,5 @@ public class MemberFrame extends JFrame{
     public void showAlert(String message){
         JOptionPane.showMessageDialog(this, message);
     }
+
 }
