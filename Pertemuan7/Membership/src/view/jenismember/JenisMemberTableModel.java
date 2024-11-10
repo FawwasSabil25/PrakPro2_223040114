@@ -6,45 +6,67 @@ import model.JenisMember;
 
 public class JenisMemberTableModel extends AbstractTableModel {
 
-     private String[] columnNames = {"Nama"};
+    private String[] columnNames = { "Nama" };
     private List<JenisMember> data;
 
-    public JenisMemberTableModel(List<JenisMember> data){
+    public JenisMemberTableModel(List<JenisMember> data) {
         this.data = data;
     }
 
-    public int getColumnCount(){
+    @Override
+    public int getColumnCount() {
         return columnNames.length;
     }
 
-    public int getRowCount(){
+    @Override
+    public int getRowCount() {
         return data.size();
     }
 
-    public String getColumnName(int col){
+    @Override
+    public String getColumnName(int col) {
         return columnNames[col];
     }
 
-    public Object getValueAt(int row, int col){
+    @Override
+    public Object getValueAt(int row, int col) {
         JenisMember rowItem = data.get(row);
-        String value = "";
-        switch (col)
-        {
+        switch (col) {
             case 0:
-            value = rowItem.getNama();
-            break;
+                return rowItem.getNama();
+            default:
+                return null;
         }
-        return  value;
-
     }
 
-    public boolean isCellEditable(int row, int col){
+    @Override
+    public boolean isCellEditable(int row, int col) {
         return false;
     }
 
-    public void add(JenisMember value){
+    public JenisMember getJenisMemberAt(int row) {
+        return data.get(row);
+    }
+
+    public void add(JenisMember value) {
         data.add(value);
-        fireTableRowsInserted(data.size() - 1, data.size() -1);
+        fireTableRowsInserted(data.size() - 1, data.size() - 1);
+    }
+
+    public void update(JenisMember value) {
+        int index = data.indexOf(value);
+        if (index != -1) {
+            data.set(index, value);
+            fireTableRowsUpdated(index, index);
+        }
+    }
+
+    public void remove(JenisMember value) {
+        int index = data.indexOf(value);
+        if (index != -1) {
+            data.remove(index);
+            fireTableRowsDeleted(index, index);
+        }
     }
 
 }
