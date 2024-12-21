@@ -9,6 +9,7 @@ public class JenisMemberFrame extends JFrame{
 
     private JTextField textFieldNama;
     private JTable table;
+    private JComboBox<String> comboBoxJenisMember;
     private JenisMemberTableModel tableModel;
     private JenisMemberDao jenisMemberDao;
 
@@ -52,6 +53,10 @@ public class JenisMemberFrame extends JFrame{
          new JenisMemberButtonDeleteActionListener(this, jenisMemberDao);
         buttonDelete.addActionListener(deleteListener);
 
+        comboBoxJenisMember = new JComboBox<>(new String[]{"Silver", "Gold", "Platinum"});
+        comboBoxJenisMember.setBounds(15, 100, 250, 30);
+
+        this.add(comboBoxJenisMember);
         this.add(buttonSave);
         this.add(buttonUpdate);
         this.add(buttonDelete);
