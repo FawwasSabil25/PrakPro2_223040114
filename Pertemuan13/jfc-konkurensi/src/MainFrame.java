@@ -39,16 +39,39 @@ public class MainFrame {
            
            //action btn
            startButton.addActionListener(e->{
+               startButton.setEnabled(false); //btn nonaktif saat proses
+               statusLabel.setText("Proses berjalan");
               
-               //update progressbar 1%/s
-               for(int i = 0; i <= 60; i++){
-                   progressBar.setValue(i);
-                   try{
-                       Thread.sleep(1000);
-                   }catch(Exception ex){
-                       System.err.println(ex.getMessage());
+               //swingworker utk tugas berat
+               SwingWorker<Void, Integer> worker = new SwingWorker<>(){
+                   @Override
+                   protected Void doInBackground() throws Exception{
+                       
+                       //simulasi Tugas Berat
+                       for(int i = 0; i <= 100; i++){
+                            Thread.sleep(50); //simulasi delay
+                            publish(i); //perbarui progress
+                        }
+                       return null;
                    }
-               }
+                   
+                   @Override
+                   protected void process(List<Integer> chunks){
+                       //perbarui progress bar
+                       int LatestProgress = chunks.get(chunks.size()-1);
+                       progressBar.setValue(LatestProgress);
+                   }
+                   
+                   @Override
+                   protected void done(){
+                       //aksi setelah tugas selesai
+                       startButton.setEnabled(true);
+                       statusLabel.setText("Proses selesai");
+                   }
+               };
+               
+               //jalanin SwingWorker
+               worker.execute();
            });
            
            //nampilin frame
